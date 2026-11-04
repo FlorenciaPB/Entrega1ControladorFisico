@@ -53,13 +53,8 @@ Repositorio correspondiente a la **Entrega 1: Diseño de Controlador Físico**.
 ## 6. Registro Fotográfico y Proceso de Manufactura
 
 ### Proceso de Soldadura y Shield PCB
-*(Inserta aquí tus fotografías del proceso de soldadura sobre la placa preperforada y el shield montado)*
-
 ### Ensamble Interno y Carcasa Final
-*(Inserta aquí fotos del interior de la caja de madera mostrando la robustez y orden de los componentes)*
 
 ---
 
 ## 7. Video de Demostración
-Puedes ver el funcionamiento en tiempo real del controlador físico interactuando con el Dashboard web en el siguiente enlace:
-👉 [Enlace al video de demostración en YouTube / Git](#)
