@@ -53,8 +53,9 @@ Repositorio correspondiente a la **Entrega 1: Diseño de Controlador Físico**.
 ## 6. Registro Fotográfico y Proceso de Manufactura
 
 ### Proceso de Soldadura y Shield PCB
+soldadura_shield.jpg
 ### Ensamble Interno y Carcasa Final
-
+ensamble_interno.jpg
 ---
 
 ## 7. Video de Demostración
