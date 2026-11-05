@@ -60,4 +60,4 @@ ensamble_interno.jpg
 ---
 
 ## 7. Video de Demostración
-Link de youtube
+Link de Youtube
