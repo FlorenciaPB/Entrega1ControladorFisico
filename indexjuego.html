@@ -13,7 +13,7 @@
     canvas { display: block; width: 100%; height: 100%; }
     
     .hud { position: absolute; top: 15px; left: 20px; right: 20px; display: flex; justify-content: space-between; z-index: 10; font-weight: bold; font-size: 18px; text-shadow: 1px 1px 0px #ffffff; pointer-events: none;}
-    .corazones { color: #e11d48; font-size: 24px; letter-spacing: 2px;}
+    .corazones { color: #fb7185; font-size: 24px; letter-spacing: 2px;}
     
     #top-bar { margin-bottom: 15px; display: flex; gap: 10px; }
     .btn-sys { padding: 10px 20px; font-size: 16px; background: #ec4899; color: white; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; border-bottom: 4px solid #be185d; font-family: inherit; transition: background 0.2s;}
@@ -43,7 +43,7 @@
     <div class="hud">
       <div>
         <span class="corazones" id="ui-vidas">❤️❤️❤️</span><br>
-        <span id="ui-nota" style="color: #2563eb; font-size: 18px;">🎵 NOTA: AZUL</span>
+        <span id="ui-nota" style="color: #60a5fa; font-size: 18px;">🎵 NOTA: AZUL</span>
       </div>
       <div style="text-align: right; color: #831843;">
         <span id="ui-puntos" style="color: #db2777; font-size: 26px;">0</span> Pts
@@ -63,7 +63,7 @@
     </div>
 
     <div id="gameover-modal" class="modal-overlay" style="display: none;">
-      <h1 class="modal-title" style="color: #be123c; text-shadow: 0 0 15px rgba(190,18,60,0.25);">¡MELODÍA INTERRUMPIDA!</h1>
+      <h1 class="modal-title" style="color: #e11d48; text-shadow: 0 0 15px rgba(225,29,72,0.25);">¡MELODÍA INTERRUMPIDA!</h1>
       <div class="modal-text" style="font-size: 20px;">
         Puntuación total: <span id="final-puntos" style="color: #db2777; font-weight: bold;">0</span> pts
       </div>
@@ -208,17 +208,18 @@
       let faderPct = (smoothedSlider - normalizationMin) / (normalizationMax - normalizationMin);
       faderPct = Math.max(0, Math.min(1, faderPct)); 
 
+      // Colores pasteles para la corchea y las ondas
       let colorActual = "AZUL";
-      let colorHex = "#2563eb";
+      let colorHex = "#60a5fa";
       let frecuenciaNota = 261.63;
 
       if (faderPct > 0.66) {
         colorActual = "ROJO";
-        colorHex = "#e11d48";
+        colorHex = "#f87171";
         frecuenciaNota = 392.00;
       } else if (faderPct > 0.33) {
         colorActual = "VERDE";
-        colorHex = "#16a34a";
+        colorHex = "#4ade80";
         frecuenciaNota = 329.63;
       }
 
@@ -264,9 +265,10 @@
         }
       }
 
+      // Colores pasteles para las pelotitas enemigas
       if (Math.random() < 0.02) {
         let coloresDisponibles = ["AZUL", "VERDE", "ROJO"];
-        let hexDisponibles = ["#2563eb", "#16a34a", "#e11d48"];
+        let hexDisponibles = ["#60a5fa", "#4ade80", "#f87171"];
         let idx = Math.floor(Math.random() * 3);
 
         circulos.push({ 
@@ -332,7 +334,7 @@
       // Corchea del jugador
       ctx.fillStyle = colorHex;
       ctx.shadowColor = colorHex;
-      ctx.shadowBlur = 14;
+      ctx.shadowBlur = 12;
       
       ctx.beginPath(); ctx.arc(player.x - 5, player.y + 10, 10, 0, Math.PI*2); ctx.fill();
       ctx.fillRect(player.x + 3, player.y - 15, 4, 25);
@@ -346,7 +348,7 @@
         ctx.beginPath(); ctx.arc(player.x, player.y, o.radio, 0, Math.PI*2); ctx.stroke();
       }
 
-      // Círculos enemigos
+      // Pelotitas enemigas en tonos pasteles
       for (let c of circulos) {
         ctx.fillStyle = c.colorHex;
         ctx.shadowColor = c.colorHex;
@@ -356,8 +358,8 @@
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        ctx.strokeStyle = "#4a1530";
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#831843";
+        ctx.lineWidth = 1.5;
         ctx.stroke();
       }
 
